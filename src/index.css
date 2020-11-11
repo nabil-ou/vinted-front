@@ -1,1 +1,28 @@
-/* Reset rules */
+body {
+  margin: 0;
+  font-family: "Maison Neue";
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  margin-top: 20px;
+  color: black;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+button {
+  outline: none;
+}
+
+img {
+  pointer-events: none;
+}
