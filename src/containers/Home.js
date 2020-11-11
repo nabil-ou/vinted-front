@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "../components/Card";
 import Dechire from "../dechire.svg";
+import Loader from "react-loader-spinner";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +24,13 @@ const Home = () => {
   }, []);
 
   return isLoading ? (
-    <p>En cours de chargement</p>
+    <Loader
+      className="home-loader"
+      type="Audio"
+      color="#2CB1BA"
+      height={200}
+      width={200}
+    />
   ) : (
     <div>
       <div className="home-hero-bg-img">
