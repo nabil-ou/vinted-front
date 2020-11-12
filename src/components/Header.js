@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "./logo.png";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
   return (
@@ -11,6 +12,7 @@ const Header = () => {
         </div>
       </Link>
       <div className="search-container">
+        <FontAwesomeIcon icon="search" className="search-input-icon" />
         <input
           className="search-input"
           type="text"

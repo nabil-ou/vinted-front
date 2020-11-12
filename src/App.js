@@ -6,6 +6,9 @@ import Home from "./containers/Home";
 import Offer from "./containers/Offer";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+library.add(faSearch);
 
 function App() {
   return (
