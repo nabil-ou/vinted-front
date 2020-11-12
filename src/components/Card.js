@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Card = ({ offer }) => {
   return (
-    <Link to={`/offer/${offer._id}`}>
-      <div className="card-container">
-        <div className="card-avatar-username">
-          <img src={offer.owner.account.avatar.url} alt="" />
-          <span> {offer.owner.account.username}</span>
-        </div>
+    <div className="card-container">
+      <div className="card-avatar-username">
+        <img src={offer.owner.account.avatar.url} alt="" />
+        <span> {offer.owner.account.username}</span>
+      </div>
+      <Link className="link" to={`/offer/${offer._id}`}>
         <div>
           <img src={offer.product_image.url} alt="" />
           <div className="card-price-size-brand">
@@ -17,8 +17,8 @@ const Card = ({ offer }) => {
             <span>{offer.product_details[0].MARQUE}</span>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 

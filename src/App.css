@@ -68,6 +68,17 @@
   color: #2cb1ba;
 }
 
+.button-logout {
+  height: 30px;
+  border-radius: 5px;
+  font-family: "Maison Neue";
+  font-size: 12px;
+  outline: none;
+  border: none;
+  background-color: #c2175b;
+  color: white;
+}
+
 .button-sold {
   background-color: #2cb1ba;
   color: white;
@@ -75,6 +86,77 @@
 
 .button-signup {
   margin-right: 20px;
+}
+
+/* ---------- LOGIN/SIGNUP ---------- */
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+.signup-form {
+  display: flex;
+  width: 275px;
+  margin: auto;
+  flex-direction: column;
+}
+.signup-form > input {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+}
+
+.signup-form input::placeholder {
+  color: #cbcccd;
+  font-size: 16px;
+}
+
+.signup-form input[type="checkbox"] {
+  transform: scale(2);
+  margin-right: 20px;
+}
+
+.checkbox-container {
+  margin-top: 20px;
+  padding: 10px;
+}
+.checkbox-container > div {
+  display: flex;
+}
+.checkbox-container > p {
+  text-align: left;
+  color: #999999;
+  font-size: 12px;
+}
+
+.checkbox-container span {
+  color: #666666;
+}
+
+.signup-form button {
+  background-color: #2cb1ba;
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.signup-container a {
+  color: #2cb1ba;
+  font-size: 12px;
+}
+
+.signup-login-error-message {
+  color: red;
+  font-size: 9px;
 }
 
 /* ---------- HOME ---------- */
@@ -327,6 +409,7 @@
   bottom: 0;
   text-align: center;
   background-color: white;
+  width: 100%;
 }
 
 .footer p {

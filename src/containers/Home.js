@@ -3,6 +3,7 @@ import axios from "axios";
 import Card from "../components/Card";
 import Dechire from "../dechire.svg";
 import Loader from "react-loader-spinner";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,8 +27,8 @@ const Home = () => {
   return isLoading ? (
     <Loader
       className="home-loader"
-      type="Audio"
-      color="#2CB1BA"
+      type="ThreeDots"
+      color="#2AAEB7"
       height={200}
       width={200}
     />
@@ -38,7 +39,9 @@ const Home = () => {
         <div>
           <div className="home-hero-ready">
             Prêts à faire du tri dans vos placards ?
-            <button>Commencer à vendre</button>
+            <Link to="/login">
+              <button>Commencer à vendre</button>
+            </Link>
           </div>
         </div>
       </div>

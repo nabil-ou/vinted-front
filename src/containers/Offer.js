@@ -3,15 +3,17 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import Loader from "react-loader-spinner";
 
 const Offer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const [offer, setOffer] = useState();
+
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://lereacteur-vinted-api.herokuapp.com/offer/" + id
+        `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
       );
       setOffer(response.data);
       setIsLoading(false);
@@ -25,7 +27,13 @@ const Offer = () => {
   });
 
   return isLoading ? (
-    <p>En cours de chargement</p>
+    <Loader
+      className="home-loader"
+      type="ThreeDots"
+      color="#2AAEB7"
+      height={200}
+      width={200}
+    />
   ) : (
     <div className="offer-body">
       <div className="offer-container">
