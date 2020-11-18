@@ -30,7 +30,7 @@ const Offer = ({ setPanier }) => {
 
   return isLoading ? (
     <Loader
-      className="home-loader"
+      className="loader"
       type="ThreeDots"
       color="#2AAEB7"
       height={200}
@@ -51,11 +51,7 @@ const Offer = ({ setPanier }) => {
               })}
             </Carousel>
           ) : (
-            <img
-              className="offer-picture"
-              src={offer.product_image.url}
-              alt=""
-            />
+            <img className="offer-img" src={offer.product_image.url} alt="" />
           )}
         </div>
         <div className="infos-offer">
