@@ -30,9 +30,9 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div className="signup-container">
+    <div className="container">
       <h2>Se connecter</h2>
-      <form className="signup-form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           placeholder="Email"
           type="email"

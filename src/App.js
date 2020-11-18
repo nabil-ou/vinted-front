@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Cookie from "js-cookie";
+import { Redirect } from "react-router-dom";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./containers/Home";
@@ -11,21 +12,21 @@ import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Publish from "./containers/Publish";
+import Payment from "./containers/Payment";
 library.add(faSearch);
 
 function App() {
-  // Tout ce qui concerne l'authentification se passe dans App.js
   const [token, setToken] = useState(Cookie.get("userToken") || null);
 
+  const [panier, setPanier] = useState({});
   const setUser = (tokenToSet) => {
     if (tokenToSet) {
-      // Créer un cookie
       Cookie.set("userToken", tokenToSet);
       setToken(tokenToSet);
     } else {
-      // Supprimer le cookie
       Cookie.remove("userToken");
-      // Repasser le state token à null
+
       setToken(null);
     }
   };
@@ -36,7 +37,17 @@ function App() {
         <Header token={token} setUser={setUser} />
         <Switch>
           <Route path="/offer/:id">
-            <Offer />
+            <Offer setPanier={setPanier} />
+          </Route>
+          <Route path="/payment">
+            {!token ? (
+              <Redirect to="/login" />
+            ) : (
+              <Payment panier={panier} token={token} />
+            )}
+          </Route>
+          <Route path="/publish">
+            {!token ? <Redirect to="/login" /> : <Publish token={token} />}
           </Route>
           <Route path="/login">
             <Login setUser={setUser} />

@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = ({ token, setUser }) => {
   return (
-    <div className="header-container">
+    <div className="header">
       <Link className="link" to="/">
         <div>
-          <img className="header-logo" alt="logo" src={Logo} />
+          <img className="logo" alt="logo" src={Logo} />
         </div>
       </Link>
-      <div className="search-container">
-        <FontAwesomeIcon icon="search" className="search-input-icon" />
+      <div className="search-bar">
+        <FontAwesomeIcon icon="search" className="search-icon" />
         <input
           className="search-input"
           type="text"
@@ -22,12 +22,12 @@ const Header = ({ token, setUser }) => {
       {!token ? (
         <div>
           <Link to="/signup">
-            <button className="header-button button-login-signup button-signup">
+            <button className="button-header button-login-signup ">
               S'inscrire
             </button>
           </Link>
           <Link to="/login">
-            <button className="header-button button-login-signup">
+            <button className="button-header button-login-signup">
               Se connecter
             </button>
           </Link>
@@ -35,7 +35,7 @@ const Header = ({ token, setUser }) => {
       ) : (
         <div>
           <button
-            className="header-button button-logout"
+            className="button-header button-logout"
             onClick={() => {
               setUser(null);
             }}
@@ -44,10 +44,8 @@ const Header = ({ token, setUser }) => {
           </button>
         </div>
       )}
-      <Link to={!token ? "/login" : "/"}>
-        <button className="header-button button-sold">
-          Vends tes articles
-        </button>
+      <Link to="/publish">
+        <button className="button-sell">Vends tes articles</button>
       </Link>
     </div>
   );

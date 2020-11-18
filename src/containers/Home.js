@@ -26,7 +26,7 @@ const Home = () => {
 
   return isLoading ? (
     <Loader
-      className="home-loader"
+      className="loader"
       type="ThreeDots"
       color="#2AAEB7"
       height={200}
@@ -34,10 +34,10 @@ const Home = () => {
     />
   ) : (
     <div>
-      <div className="home-hero-bg-img">
-        <img src={Dechire} alt="forme" className="home-hero-forme" />
+      <div className="home-img">
+        <img className="tear" src={Dechire} alt="forme" />
         <div>
-          <div className="home-hero-ready">
+          <div className="home-message">
             Prêts à faire du tri dans vos placards ?
             <Link to="/login">
               <button>Commencer à vendre</button>
@@ -46,7 +46,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home-card-wrapper">
+      <div className="card-wrapper">
         {data.offers.map((offer, index) => {
           return <Card key={index} offer={offer} />;
         })}

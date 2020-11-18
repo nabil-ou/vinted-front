@@ -12,8 +12,8 @@ const Signup = ({ setUser }) => {
   const history = useHistory();
 
   const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      event.preventDefault();
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/user/signup",
         {
@@ -31,9 +31,9 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <div className="signup-container">
+    <div className="container">
       <h2>S'inscrire</h2>
-      <form className="signup-form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           placeholder="Nom d'utilisateur"
           type="text"
@@ -66,6 +66,7 @@ const Signup = ({ setUser }) => {
           <div>
             <input
               type="checkbox"
+              id="checkbox"
               value={checked}
               onChange={(event) => {
                 setChecked(event.target.value);
