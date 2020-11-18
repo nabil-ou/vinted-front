@@ -23,7 +23,7 @@ const CheckoutForm = ({ panier }) => {
           token: stripeToken,
 
           title: panier.productName,
-          amount: panier.totalPrice,
+          amount: panier.totalPrice.toFixed(2),
         }
       );
       console.log(response.data);
